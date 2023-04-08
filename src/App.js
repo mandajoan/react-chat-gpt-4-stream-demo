@@ -183,7 +183,10 @@ export function App() {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        submitQuestionStream()
+        setConversationContext([
+            ...conversationContext,
+            { role: 'user', content: userInput },
+        ])
     }
 
     const handleReset = (event) => {
